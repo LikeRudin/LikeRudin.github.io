@@ -16,6 +16,9 @@ const changeForm = function (name) {
     greetString.innerText = `welcome, ${name}.`
     loginForm.classList.add("hidden");
     todoForm.classList.remove("hidden");
+    todoForm.style.display = "flex";
+    todoForm.style.flexDirection = "column"
+    todoForm.style.alignItems = "center"
 }
 
 if (localStorage.getItem("userName")) {
