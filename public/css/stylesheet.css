@@ -18,10 +18,6 @@
     background-color: yellowgreen;
 }
 
-.app.hidden {
-    display: none;
-   
-}
 
 #clockForm {
     
@@ -46,4 +42,9 @@
 
 #todoList {
     background-color: pink;
+}
+
+.hidden {
+    display: none;
+   
 }
