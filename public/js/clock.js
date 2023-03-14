@@ -1,6 +1,7 @@
-const yearText = document.querySelector("#time")
+const clockForm = document.querySelector("#clockForm")
+const timeText = clockForm.querySelector("#time")
 
-function setTime() {
+const setTime = function() {
 const date = new Date();
 
 
@@ -15,8 +16,34 @@ const secondText = "seconds :"+ seconds.padStart(2,"0");
 
 clockIcon = `${hourText}:${minuteText}`;
 
-yearText.innerHTML = `<abbr title="${secondText}"> ${clockIcon} </abbr>`;
+timeText.innerHTML = `<abbr title="${secondText}"> ${clockIcon} </abbr>`;
 }
+
+const getDate = function() {
+    
+    const date = new Date();
+    const years = date.getFullYear().toString();
+    const month = (date.getMonth() + 1).toString();
+    const day = date.getDate().toString();
+    
+    const monthText = month.padStart(2, "0");
+    const dayText = day.padStart(2,"0");
+
+    const yearMonthDay = years + monthText + dayText
+    return yearMonthDay 
+}
+
+
+
+
+const setDate = function(dateText) {
+    const dateTag = clockForm.querySelector("#date");
+    dateTag.innerText = dateText;
+}
+
+
+
+setDate(getDate());
 
 setTime();
 setInterval(setTime, 1000);
